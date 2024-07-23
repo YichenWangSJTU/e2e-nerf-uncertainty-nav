@@ -2,6 +2,8 @@
 
 This is the official implementation of IROS 2024 paper "Enhancing Exploratory Capability of Visual Navigation Using Uncertainty of Implicit Scene Representation" created by Yichen Wang, Qiming Liu, Zhe Liu and Hesheng Wang.
 
+![](doc/network.png)
+
 ## Abstract
 
 In the context of visual navigation in unknown scenes, both "exploration" and "exploitation" are equally crucial. Robots must first establish environmental cognition through exploration and then utilize the cognitive information to accomplish target searches. However, most existing methods for image-goal navigation prioritize target search over the generation of exploratory behavior. To address this, we propose the Navigation with Uncertainty-driven Exploration (NUE) pipeline, which uses an implicit and compact scene representation, NeRF, as a cognitive structure. We estimate the uncertainty of NeRF and augment the exploratory ability by the uncertainty to in turn facilitate the construction of implicit representation. Simultaneously, we extract memory information from NeRF to enhance the robot's reasoning ability for determining the location of the target. Ultimately, we seamlessly combine the two generated abilities to produce navigational actions. Our pipeline is end-to-end, with the environmental cognitive structure being constructed online. Extensive experimental results on image-goal navigation demonstrate the capability of our pipeline to enhance exploratory behaviors, while also enabling a natural transition from the exploration to exploitation phase. This enables our model to outperform existing memory-based cognitive navigation structures in terms of navigation performance.
@@ -46,7 +48,7 @@ Please reminder to specify the `device_0`, `device_1`, `model_load`(path to mode
 
 The training results will be saved in `summary_path`, the trained models will be saved in `model_path`.
 
-## Test
+## Testing
 
 Please run
 ```
@@ -55,3 +57,7 @@ python test.py
 Please reminder to specify the `device_0`, `device_1`, `model_load`(path to model) in the scripts.
 
 The test results will be saved in `result_save_path`.
+
+## Quantitative results:
+
+![](doc/result.png)
