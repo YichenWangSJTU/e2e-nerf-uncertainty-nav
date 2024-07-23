@@ -21,10 +21,9 @@ g++ 9.3.0
 ```
 iGibson is a simulation environment providing fast visual rendering and physics simulation based on Bullet. The download of igibson can be found at: [igibson](https://github.com/StanfordVL/iGibson)
 
-## Usage
+## Datasets
 
-### Datasets
-
+### Scenes datasets
 We use [igibson and gibson dataset](https://stanfordvl.github.io/iGibson/dataset.html) in our experiments. The data of the igibson dataset and gibson dataset should be organized as follows:
 ```
 iGibson/
@@ -37,6 +36,27 @@ iGibson/
 │   │   │   └── ...
 │   │   └── igibson.key
 ```
+
+### Training datasets
+We use imitation learning to train NUE, utilizing a [waypoints dataset](https://github.com/StanfordVL/GibsonEnv/blob/master/gibson/data/README.md#dataset-splits) to gather the expert dataset needed for training.
+
+After download the waypoints dataset, the data of the waypoints dataset should be organized as follows:
+```
+NUE-NeRF-nav/
+├── navigation_scenarios/
+│   ├── waypoints/
+│   │   ├── tiny/
+│   │   ├── medium/
+│   │   ├── full/
+│   │   └── full+/
+```
+
+To obtain the expert dataset for imitation learning from the waypoints dataset, run:
+
+```
+python sample.py
+```
+
 
 ## Training
 
