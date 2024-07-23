@@ -72,8 +72,7 @@ with open('cameras.txt', 'r') as f:
     ], dtype=np.float32)
 
 if __name__ == '__main__':
-    #model = E2E_model(3)
-    model = E2E_model_qkv(3)
+    model = E2E_model(3)
     #model.load_state_dict(torch.load(model_load, map_location='cpu'))
     nerf = NeRF_pi(3)
     nerf_tmp = NeRF_pi(3)

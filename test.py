@@ -76,8 +76,7 @@ if __name__=='__main__':
     config_data = load_config(map_list, map_index)
     map_path = os.path.join(dataset_path, map_list[map_index], 'floor_trav_0.png')
 
-    model = E2E_model_qkv(3)
-    #model = E2E_model_without_exploration(3)
+    model = E2E_model(3)
     model.load_state_dict(torch.load(model_load, map_location=device_0))
     model.to(device_0)
     model.eval()
