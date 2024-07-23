@@ -58,7 +58,7 @@ device_0 = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 device_1 = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
 config_data = yaml.load(open("turtlebot_nav.yaml", "r"), Loader=yaml.FullLoader)
 
-model_index = '2024-01-27_6015/30000'
+model_index = ''
 model_load = 'model/' + model_index + '.pkl'
 
 if not os.path.exists('test_result'):
@@ -72,12 +72,12 @@ if __name__=='__main__':
 
     map_list = ['Avonia', 'Azusa', 'Crandon', 'Lathrup', 'Mosinee', 'Nicut', 'Rabbit', 'Sawpit', 'Scioto', 'Shelbiana', 'Silas', 'Sisters', 'Spencerville', 'Swormville']
     map_index = 0
-    dataset_path = 'test_dataset_2'
+    dataset_path = 'test_dataset'
     config_data = load_config(map_list, map_index)
     map_path = os.path.join(dataset_path, map_list[map_index], 'floor_trav_0.png')
 
     model = E2E_model(3)
-    model.load_state_dict(torch.load(model_load, map_location=device_0))
+    #model.load_state_dict(torch.load(model_load, map_location=device_0))
     model.to(device_0)
     model.eval()
     nerf = NeRF_pi(3)
@@ -115,7 +115,7 @@ if __name__=='__main__':
         print(scene)
         env = iGibsonEnv(config_file=deepcopy(config_data), scene_id=scene[:-5], mode='headless', action_timestep=2 / 5)
         env.reset()
-        with open('test_dataset_2/'+scene, 'r') as f:
+        with open('test_dataset/'+scene, 'r') as f:
             content = json.load(f)
         result = []
         # 遍历每一个episode

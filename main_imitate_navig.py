@@ -24,7 +24,7 @@ warnings.filterwarnings("ignore", category=UserWarning)
 training = 1 # 1 for train
 
 # RL
-episodeLimit = 240000000
+episodeLimit = 24000
 batchSize = 256
 initialLearningRate = 5e-4
 initial_epsilon_greedy = 0.5
@@ -33,10 +33,10 @@ epsilonGreedyDecayStep = 2e6
 lrDecayStep = 1e7  # 0  1e7
 save_model_every_n_step = 10000
 
-date=str(datetime.today())[:10]+'_6015'
+date=str(datetime.today())[:10]
 model_path = './model/' + date + '/'
 summary_path = './summary/' + date + '/'
-model_load = 'model/2024-01-26_6015/5000.pkl'
+model_load = ''
 
 if training:
     if not os.path.exists(model_path):
@@ -102,7 +102,7 @@ if __name__ == '__main__':
     p1 = Process(target=nerf_train, args=(nerf, device_0, lock, queue, nerf_list, reset_list, child_conn,))
     p1.start()
     process.append(p1)
-    data = dataset('/tmp/Gibson_Dataset_Sample', device_0, 30)
+    data = dataset('./dataset', device_0, 30)
     cache = []
     if training:
         while episodeCount < episodeLimit:
