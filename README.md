@@ -38,7 +38,7 @@ iGibson/
 ```
 
 ### Training datasets
-We use imitation learning to train NUE, utilizing a [waypoints dataset](https://github.com/StanfordVL/GibsonEnv/blob/master/gibson/data/README.md#dataset-splits) to gather the trianing dataset needed for training.
+We use imitation learning to train NUE, utilizing a [waypoints dataset](https://github.com/StanfordVL/GibsonEnv/blob/master/gibson/data/README.md#dataset-splits) to gather the expert dataset needed for training.
 
 After download the waypoints dataset, the data of the waypoints dataset should be organized as follows:
 ```
