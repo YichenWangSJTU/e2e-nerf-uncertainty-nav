@@ -38,7 +38,7 @@ iGibson/
 ```
 
 ### Training datasets
-We use imitation learning to train NUE, utilizing a [waypoints dataset](https://github.com/StanfordVL/GibsonEnv/blob/master/gibson/data/README.md#dataset-splits) to gather the expert dataset needed for training.
+We use imitation learning to train NUE, utilizing a [waypoints dataset](https://github.com/StanfordVL/GibsonEnv/blob/master/gibson/data/README.md#dataset-splits) to gather the trianing dataset needed for training.
 
 After download the waypoints dataset, the data of the waypoints dataset should be organized as follows:
 ```
@@ -51,10 +51,24 @@ NUE-NeRF-nav/
 │   │   └── full+/
 ```
 
-To obtain the expert dataset for imitation learning from the waypoints dataset, run:
+To obtain the training dataset (expert dataset) for imitation learning from the waypoints dataset, run:
 
 ```
 python sample.py
+```
+
+The data of the training dataset will be organized as follows:
+
+```
+NUE-NeRF-nav/
+├── dataset/
+│   ├── Pettigrew/
+│   │   ├── 0000/
+│   │   │   ├── observation.npy
+│   │   │   ├── action.npy
+│   │   │   └── ...
+│   │   ├── 0001/
+│   │   └── ...
 ```
 
 
