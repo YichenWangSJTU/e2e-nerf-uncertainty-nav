@@ -24,7 +24,7 @@ iGibson is a simulation environment providing fast visual rendering and physics 
 ## Datasets
 
 ### Scenes datasets
-We use [igibson and gibson datasets](https://stanfordvl.github.io/iGibson/dataset.html) in our experiments. The data of the igibson dataset and gibson dataset should be organized as follows:
+We use [igibson and gibson datasets](https://stanfordvl.github.io/iGibson/dataset.html) in our experiments. The data of the igibson datasets and gibson datasets should be organized as follows:
 ```
 iGibson/
 ├── igibson/
